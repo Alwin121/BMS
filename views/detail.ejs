@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="/bootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+  </head>
+  <body>
+	<%- include("./header.ejs",{mytitle:'detail',isShow:true,username:list.author}) %>
+
+    <div class="container">
+        <div class="panel panel-default">
+  <div class="panel-heading">title</div>
+  <div class="panel-body">
+    <%- list.title%>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">content</h3>
+  </div>
+  <div class="panel-body">
+    <pre><%- list.content%></pre>
+    
+  </div>
+</div>  
+    </div>
+        <a href="/" class="label label-default">返回</a>
+
+  </body>
+</html>

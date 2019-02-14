@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="/bootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+  </head>
+  <body>
+	<%- include("./header.ejs",{mytitle:'详情页',username:list[0].author,isShow:true}) %>
+    <div class="container">
+    	<div class="bs-example" data-example-id="striped-table">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>作者</th>
+          <th>发布时间</th>
+          <th>编辑</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i = 0; i<list.length;i++){%>
+        <tr>
+          <th scope="row"><a href="/detail?id=<%- list[i]._id%>"><%- list[i].title%></a></th>
+          <td ><%- list[i].author%></td>
+          <td><%- handleDate(list[i].date)%></td>
+          <td><a class="btn btn-info" href="/blog/change/<%- list[i]._id%>">编辑</a><a href="/remove/<%- list[i]._id%>" class="btn btn-danger">删除</a></td>
+        </tr>
+
+        <%}%>
+
+        <!-- <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+    </div>
+  </body>
+</html>
